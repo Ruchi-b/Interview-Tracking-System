@@ -35,7 +35,7 @@ public class HrController {
 	//16
 	@PutMapping(value="/interview/{id}",consumes=MediaType.APPLICATION_JSON_VALUE, produces= {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
 	public InterviewDto giveRating(@PathVariable("id") int id, @RequestBody InterviewDto interviewDto) {
-		return hrService.giveRating();
+		return hrService.giveRating(id, interviewDto);
 	}
 	
 	//17
