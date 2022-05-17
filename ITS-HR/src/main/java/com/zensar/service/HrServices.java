@@ -8,7 +8,7 @@ import com.zensar.dto.InterviewDto;
 public interface HrServices {
 	
 	public List<CandidateDto> viewInterviewMembers();
-	public InterviewDto giveRating();
+	public InterviewDto giveRating(id, interviewDto);
 	public CandidateDto viewCandidatesById(int id);
 
 }
