@@ -36,10 +36,22 @@ public class HrServiceImpl implements HrServices{
 	}
 
 	@Override
-	public InterviewDto giveRating() {
-		
+	public InterviewDto giveRating(int id, InterviewDto interviewDto) {
+		Optional<InterviewEntity> optionalInterviewEntity = interviewRepo.findById(id);
+		if(optionalInterviewEntity.isPresent()) {
+		InterviewEntity interviewEntity = optionalInterviewEntity.get();
+		interviewEntity.setHrRating(interviewDto.getHrRating());
+		if(interviewEntity.getHrRating()>5&& interviewEntity.getTechRating()>5) {
+			interviewEntity.setFinalStatus("PASS");
+		}
+		if(interviewEntity.getHrRating()<5 || interviewEntity.getTechRating()<5) {
+			interviewEntity.setFinalStatus("FAIL");
+		}
+		interviewRepo.save(interviewEntity);
+		return convertInterviewEntityIntoDto(interviewEntity);
+		}
 		return null;
-	}
+		}
 
 	@Override
 	public CandidateDto viewCandidatesById(int id) {
