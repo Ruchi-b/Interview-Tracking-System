@@ -74,15 +74,15 @@ public class HrServiceImpl implements HrServices{
 		return candidate;
 		}
 
-		/*private InterviewScheduleEntity convertInterviewScheduleDtoIntoEntity(InterviewSchedule interviewSchedule) {
-		InterviewScheduleEntity interviewScheduleEntity=modelMapper.map(interviewSchedule,InterviewScheduleEntity.class);
+		private InterviewEntity convertInterviewScheduleDtoIntoEntity(InterviewDto interviewSchedule) {
+		InterviewEntity interviewScheduleEntity=modelMapper.map(interviewSchedule,InterviewEntity.class);
 		return interviewScheduleEntity;
 		}
 
-		private InterviewSchedule convertInterviewScheduleEntityIntoDto(InterviewScheduleEntity interviewScheduleEntity) {
-		InterviewSchedule interviewSchedule=modelMapper.map(interviewScheduleEntity, InterviewSchedule.class);
+		private InterviewDto convertInterviewEntityIntoDto(InterviewEntity interviewScheduleEntity) {
+		InterviewDto interviewSchedule=modelMapper.map(interviewScheduleEntity, InterviewDto.class);
 		return interviewSchedule;
-		} */
+		}
 		
 	
 	
